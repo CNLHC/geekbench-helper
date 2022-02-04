@@ -9,14 +9,7 @@ import { program } from "commander";
 
 dotenv.config()
 
-const conf = {
-  user: process.env['PGUSER'],
-  password: process.env['PGPASSWORD'],
-  database: process.env['PGDATABASE'],
-  port: parseInt(process.env['PGPORT'] ?? ""),
-  host: process.env["PGHOST"]
-}
-const pool = new Pool(conf)
+const pool = new Pool()
 
 
 const base_query = {

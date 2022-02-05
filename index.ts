@@ -1,9 +1,9 @@
 import axios from "axios";
 import { JSDOM } from "jsdom";
 import moment from "moment";
-import _, { result } from 'lodash'
+import _ from 'lodash'
 import PromisePool from "@supercharge/promise-pool";
-import { Client, Pool } from "pg";
+import { Pool } from "pg";
 import dotenv from 'dotenv'
 import { program } from "commander";
 
@@ -93,7 +93,7 @@ async function handle_query(q: string) {
       await Promise.all(res.map(save_results))
       console.log(`(${current}/${pages}) processed`)
     })
-  console.log(333, res)
+  console.log("done")
 }
 
 program
@@ -108,6 +108,3 @@ program
 
 
 program.parse();
-
-
-
